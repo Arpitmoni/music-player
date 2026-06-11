@@ -23,14 +23,12 @@ class NowPlayingActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityNowPlayingBinding
     private val viewModel: NowPlayingViewModel by viewModels()
-
     private var isUserSeeking = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityNowPlayingBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         setupControls()
         setupSeekBar()
         observeViewModel()
@@ -60,13 +58,9 @@ class NowPlayingActivity : AppCompatActivity() {
 
     private fun setupSeekBar() {
         binding.seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
-            override fun onStartTrackingTouch(seekBar: SeekBar) {
-                isUserSeeking = true
-            }
+            override fun onStartTrackingTouch(seekBar: SeekBar) { isUserSeeking = true }
             override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
-                if (fromUser) {
-                    binding.tvCurrentTime.text = formatMillis(progress.toLong())
-                }
+                if (fromUser) binding.tvCurrentTime.text = formatMillis(progress.toLong())
             }
             override fun onStopTrackingTouch(seekBar: SeekBar) {
                 viewModel.seekTo(seekBar.progress.toLong())
@@ -76,7 +70,6 @@ class NowPlayingActivity : AppCompatActivity() {
     }
 
     private fun observeViewModel() {
-
         viewModel.playerState.observe(this) { state ->
             val song = state.currentSong ?: return@observe
 
@@ -99,8 +92,8 @@ class NowPlayingActivity : AppCompatActivity() {
 
                     override fun onResourceReady(
                         resource: Drawable,
-                        model: Any?,
-                        target: Target<Drawable>?,
+                        model: Any,
+                        target: Target<Drawable>,
                         dataSource: DataSource,
                         isFirstResource: Boolean
                     ): Boolean = false
@@ -109,14 +102,11 @@ class NowPlayingActivity : AppCompatActivity() {
 
             binding.btnPlayPause.setImageResource(
                 if (state.isPlaying) R.drawable.ic_pause_circle
-                else                 R.drawable.ic_play_circle
+                else R.drawable.ic_play_circle
             )
 
             val scale = if (state.isPlaying) 1f else 0.85f
-            binding.ivAlbumArt.animate()
-                .scaleX(scale).scaleY(scale)
-                .setDuration(300)
-                .start()
+            binding.ivAlbumArt.animate().scaleX(scale).scaleY(scale).setDuration(300).start()
 
             if (state is PlayerState.Playing || state is PlayerState.Paused) {
                 val dur = when (state) {

@@ -73,7 +73,7 @@ dependencies {
     // CardView & Palette (extract accent colors from album art)
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'androidx.palette:palette-ktx:1.0.0'
-    implementation "anroidx.media:media:1.7.0'
+    implementation "androidx.media:media:1.7.0'
     // Testing
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'

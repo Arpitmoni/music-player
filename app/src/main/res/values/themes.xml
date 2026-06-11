@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Base app theme — Material3, fully dark -->
+    <style name="Theme.MusicPlayer" parent="Theme.Material3.Dark.NoActionBar">
+
+        <!-- Primary brand colors -->
+        <item name="colorPrimary">@color/accent_purple</item>
+        <item name="colorPrimaryVariant">@color/accent_violet</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+        <!-- Secondary accent -->
+        <item name="colorSecondary">@color/accent_blue</item>
+        <item name="colorOnSecondary">@color/white</item>
+
+        <!-- Background / surface -->
+        <item name="android:colorBackground">@color/bg_primary</item>
+        <item name="colorSurface">@color/bg_surface</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+
+        <!-- Status / nav bar -->
+        <item name="android:statusBarColor">@color/status_bar</item>
+        <item name="android:navigationBarColor">@color/bg_primary</item>
+        <item name="android:windowLightStatusBar">false</item>
+
+        <!-- Window background -->
+        <item name="android:windowBackground">@color/bg_primary</item>
+
+        <!-- Edge-to-edge drawing -->
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+
+    </style>
+
+    <!-- Now Playing screen — slight transparency for album art effect -->
+    <style name="Theme.MusicPlayer.NowPlaying" parent="Theme.MusicPlayer">
+        <item name="android:statusBarColor">@color/transparent</item>
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+
+</resources>

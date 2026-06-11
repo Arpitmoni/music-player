@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- ── Backgrounds ──────────────────────────────────────────────────── -->
+    <color name="bg_primary">#0D0D0D</color>          <!-- Near-black base -->
+    <color name="bg_surface">#1A1A2E</color>           <!-- Deep navy surface -->
+    <color name="bg_card">#16213E</color>              <!-- Card background -->
+    <color name="bg_elevated">#1F2B47</color>          <!-- Elevated elements -->
+
+    <!-- ── Accent / Gradient ────────────────────────────────────────────── -->
+    <color name="accent_purple">#9B59B6</color>        <!-- Primary accent -->
+    <color name="accent_violet">#8E44AD</color>        <!-- Darker purple -->
+    <color name="accent_blue">#6C63FF</color>          <!-- Electric blue-purple -->
+    <color name="accent_pink">#E91E8C</color>          <!-- Hot pink highlight -->
+    <color name="gradient_start">#6C63FF</color>
+    <color name="gradient_end">#E91E8C</color>
+
+    <!-- ── Text ─────────────────────────────────────────────────────────── -->
+    <color name="text_primary">#F0F0F0</color>         <!-- Titles -->
+    <color name="text_secondary">#9E9E9E</color>       <!-- Artist/subtitle -->
+    <color name="text_hint">#616161</color>            <!-- Placeholders -->
+
+    <!-- ── Divider / Overlay ────────────────────────────────────────────── -->
+    <color name="divider">#2C2C54</color>
+    <color name="overlay_dark">#80000000</color>       <!-- Semi-transparent black -->
+    <color name="overlay_glass">#26FFFFFF</color>      <!-- Glass white tint -->
+
+    <!-- ── Seekbar ──────────────────────────────────────────────────────── -->
+    <color name="seekbar_track">#3D3D6B</color>
+    <color name="seekbar_progress">#6C63FF</color>
+    <color name="seekbar_thumb">#FFFFFF</color>
+
+    <!-- ── Status / System ──────────────────────────────────────────────── -->
+    <color name="status_bar">#0D0D0D</color>
+    <color name="white">#FFFFFF</color>
+    <color name="transparent">#00000000</color>
+
+</resources>

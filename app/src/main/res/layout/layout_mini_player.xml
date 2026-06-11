@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    layout_mini_player.xml
+    Glassmorphism-style floating mini-player at the bottom of the screen.
+
+    Tapping anywhere opens NowPlayingActivity.
+    Only the play/pause and next buttons are interactive independently.
+-->
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/miniPlayerCard"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="12dp"
+    android:layout_marginEnd="12dp"
+    android:layout_marginBottom="12dp"
+    app:cardBackgroundColor="@color/bg_elevated"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="16dp"
+    app:strokeColor="@color/divider"
+    app:strokeWidth="1dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp">
+
+        <!-- Album art -->
+        <ImageView
+            android:id="@+id/ivMiniArt"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:scaleType="centerCrop"
+            android:background="@drawable/bg_album_art_mini" />
+
+        <!-- Title + artist -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingStart="12dp"
+            android:paddingEnd="8dp">
+
+            <TextView
+                android:id="@+id/tvMiniTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="marquee"
+                android:focusable="true"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:singleLine="true"
+                android:textColor="@color/text_primary"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:text="Song Title" />
+
+            <TextView
+                android:id="@+id/tvMiniArtist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textColor="@color/text_secondary"
+                android:textSize="12sp"
+                android:text="Artist Name" />
+
+        </LinearLayout>
+
+        <!-- Previous (hidden in mini player, available via swipe in future) -->
+
+        <!-- Play / Pause -->
+        <ImageButton
+            android:id="@+id/btnMiniPlayPause"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:background="@drawable/bg_control_button"
+            android:src="@drawable/ic_play"
+            android:padding="10dp"
+            android:contentDescription="Play or Pause"
+            app:tint="@color/white" />
+
+        <!-- Next -->
+        <ImageButton
+            android:id="@+id/btnMiniNext"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="4dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_next"
+            android:padding="8dp"
+            android:contentDescription="Next track"
+            app:tint="@color/text_secondary" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

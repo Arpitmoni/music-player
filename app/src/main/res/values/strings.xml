@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Pulse</string>
+    <string name="songs">Songs</string>
+    <string name="now_playing">Now Playing</string>
+    <string name="no_songs_found">No music found on this device</string>
+    <string name="unknown_artist">Unknown Artist</string>
+    <string name="unknown_album">Unknown Album</string>
+</resources>

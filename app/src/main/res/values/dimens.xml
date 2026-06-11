@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Spacing -->
+    <dimen name="spacing_xs">4dp</dimen>
+    <dimen name="spacing_sm">8dp</dimen>
+    <dimen name="spacing_md">16dp</dimen>
+    <dimen name="spacing_lg">24dp</dimen>
+    <dimen name="spacing_xl">32dp</dimen>
+    <dimen name="spacing_xxl">48dp</dimen>
+
+    <!-- Card -->
+    <dimen name="card_corner_radius">16dp</dimen>
+    <dimen name="card_elevation">8dp</dimen>
+
+    <!-- Song list item -->
+    <dimen name="song_item_album_art">56dp</dimen>
+    <dimen name="song_item_album_art_corner">12dp</dimen>
+
+    <!-- Mini player -->
+    <dimen name="mini_player_height">72dp</dimen>
+    <dimen name="mini_player_art_size">48dp</dimen>
+    <dimen name="mini_player_corner">16dp</dimen>
+
+    <!-- Now playing album art -->
+    <dimen name="now_playing_art_size">300dp</dimen>
+    <dimen name="now_playing_art_corner">24dp</dimen>
+
+    <!-- Typography -->
+    <dimen name="text_xl">22sp</dimen>
+    <dimen name="text_lg">18sp</dimen>
+    <dimen name="text_md">15sp</dimen>
+    <dimen name="text_sm">13sp</dimen>
+    <dimen name="text_xs">11sp</dimen>
+</resources>

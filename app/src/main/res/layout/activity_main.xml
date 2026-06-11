@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    activity_main.xml
+    Home screen: header + song list + bottom mini-player
+
+    Layout hierarchy:
+    ┌─────────────────────────────┐
+    │  CoordinatorLayout (root)   │
+    │  ┌───────────────────────┐  │
+    │  │ AppBarLayout (header) │  │
+    │  └───────────────────────┘  │
+    │  ┌───────────────────────┐  │
+    │  │ NestedScrollView      │  │
+    │  │  └ RecyclerView       │  │
+    │  └───────────────────────┘  │
+    │  ┌───────────────────────┐  │
+    │  │ Mini Player (bottom)  │  │
+    │  └───────────────────────┘  │
+    └─────────────────────────────┘
+-->
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_primary"
+    tools:context=".ui.home.MainActivity">
+
+    <!-- ── Header ──────────────────────────────────────────────────────── -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bg_primary"
+        app:elevation="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"
+            android:paddingTop="56dp"
+            android:paddingBottom="16dp">
+
+            <TextView
+                android:id="@+id/tvAppName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pulse"
+                android:textColor="@color/white"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.05" />
+
+            <TextView
+                android:id="@+id/tvTrackCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="0 songs"
+                android:textColor="@color/text_secondary"
+                android:textSize="14sp"
+                tools:text="42 songs" />
+
+        </LinearLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- ── Song list ───────────────────────────────────────────────────── -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:fillViewport="true">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Loading spinner -->
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="64dp"
+                android:visibility="visible"
+                android:indeterminateTint="@color/accent_purple" />
+
+            <!-- Empty state -->
+            <TextView
+                android:id="@+id/tvEmpty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="64dp"
+                android:gravity="center"
+                android:textColor="@color/text_secondary"
+                android:textSize="16sp"
+                android:visibility="gone"
+                tools:text="No music found on this device" />
+
+            <!-- Songs -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvSongs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:paddingBottom="96dp"
+                android:scrollbars="none" />
+
+        </FrameLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- ── Mini Player ─────────────────────────────────────────────────── -->
+    <!-- Included as a separate layout so it can be reused / tested alone -->
+    <include
+        android:id="@+id/miniPlayer"
+        layout="@layout/layout_mini_player"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:visibility="gone" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

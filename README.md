@@ -51,8 +51,7 @@ MusicPlayer/
 └── gradle.properties
 ```
 
----
 
 
 
-*Built with ❤️ using Kotlin + ExoPlayer + Material 3*
+
